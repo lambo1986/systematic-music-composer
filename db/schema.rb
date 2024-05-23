@@ -15,6 +15,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_05_23_133809) do
   enable_extension "plpgsql"
 
   create_table "chords", force: :cascade do |t|
+    t.string "name"
     t.string "feeling"
     t.string "notes"
     t.string "relationship"

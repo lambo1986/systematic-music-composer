@@ -1,6 +1,7 @@
 class CreateChords < ActiveRecord::Migration[7.1]
   def change
     create_table :chords do |t|
+      t.string :name
       t.string :feeling
       t.string :notes
       t.string :relationship
