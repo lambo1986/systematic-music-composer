@@ -1,0 +1,31 @@
+<h1>Create New Song</h1>
+
+<%= form_with model: [@user, @user.songs.new], method: :post, local: true do |form| %>
+  <ul>
+    <li><%= form.label :title, "Song Title:" %>
+    <%= form.text_field :title, id: "song[title]" %></li>
+
+    <li><%= form.label :genre, "Song Genre" %>
+    <%= form.text_field :genre, id: "song[genre]" %></li>
+
+    <li><%= form.label :vibe, "Song Vibe" %>
+    <%= form.text_field :vibe, id: "song[vibe]" %></li>
+
+    <li><%= form.label :description, "Song Description" %>
+    <%= form.text_field :description, id: "song[description]" %></li>
+
+    <li><%= form.label :lyrics, "Song Lyrics" %>
+    <%= form.text_field :lyrics, id: "song[lyrics]" %></li>
+
+    <li><%= form.label :tempo, "Song Tempo" %>
+    <%= form.number_field :tempo, id: "song[tempo]" %></li>
+    
+    <li><%= form.label :form, "Song Form" %>
+    <%= form.text_field :form, id: "song[form]" %></li>
+
+    <li><%= form.label :instrumentation, "Song Instrumentation" %>
+    <%= form.text_field :instrumentation, id: "song[instrumentation]" %></li>
+
+    <li><%= form.submit "Create Song", id: "create_song" %></li>
+  </ul>
+<% end %>
