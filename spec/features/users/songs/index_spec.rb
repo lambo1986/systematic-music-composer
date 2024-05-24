@@ -9,9 +9,10 @@ RSpec.describe "user's songs index page", type: :feature do
     expect(user.songs.count).to eq(2)
     expect(song1.title).to eq("Dino Fight")
     expect(song2.title).to eq("Milawalkay")
-    
+
     visit "/users/#{user.id}/songs"
 
+    expect(page).to have_content(user.name)
     expect(page).to have_content(song1.title)
     expect(page).to have_link(song1.title)
   end
