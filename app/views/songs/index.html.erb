@@ -1,9 +1,11 @@
 <h1> Songs for <%= @user.name %> </h1>
 
-<h2>
+<h2><%= link_to "New Song", "/users/#{@user.id}/songs/new" %></h2>
+
+<h3>
   <% @songs.each do |song| %>
     <ul>
       <li><%= link_to song.title, "/users/#{@user.id}/songs/#{song.id}" %></li>
     </ul>  
   <% end %>
-</h2>
+</h3>
