@@ -1,0 +1,9 @@
+<h1> Songs for <%= @user.name %> </h1>
+
+<h2>
+  <% @songs.each do |song| %>
+    <ul>
+      <li><%= link_to song.title, "/users/#{@user.id}/songs/#{song.id}" %></li>
+    </ul>  
+  <% end %>
+</h2>
