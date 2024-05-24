@@ -1,0 +1,15 @@
+<%= link_to "Back to All Songs", "/users/#{@user.id}/songs"%>
+
+<h1><%= "#{@song.title}"%></h1>
+
+<h2>
+  <ul>
+    <li>Genre: <%= "#{@song.genre}"%></li>
+    <li>Vibe: <%= "#{@song.vibe}"%></li>
+    <li>Description: <%= "#{@song.description}"%></li>
+    <li>Tempo: <%= "#{@song.tempo}"%></li>
+    <li>Form: <%= "#{@song.form}"%></li>
+    <li>Instrumentation: <%= "#{@song.instrumentation}"%></li>
+    <li>Lyrics: <%= "#{@song.lyrics}"%></li>
+  </ul>
+</h2>
