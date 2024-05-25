@@ -1,0 +1,19 @@
+<h1>Create New User</h1>
+
+<%= form_with model: User.new, method: :post, local: true do |form| %>
+  <ul>
+    <li><%= form.label :name, "Name" %>
+    <%= form.text_field :name, id: "Name" %></li>
+
+    <li><%= form.label :email, "Email" %>
+    <%= form.text_field :email, id: "Email" %></li>
+
+    <li><%= form.label :password, "Password" %>
+    <%= form.text_field :password, id: "Password" %></li>
+
+    <li><%= form.label :password_confirmation, "Password Confirmation" %>
+    <%= form.text_field :password_confirmation, id: "Password Confirmation" %></li>
+
+    <li><%= form.submit "Complete Sign Up", id: "create_user" %></li>
+  </ul>
+<% end %>
