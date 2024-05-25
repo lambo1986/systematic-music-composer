@@ -22,7 +22,7 @@ RSpec.describe "basic User functions", type: :feature do
       expect(page).to have_content("Welcome, Test!")
     end
 
-    it "creates throws an error if passwords don't match" do
+    it "throws an error if passwords don't match" do
       visit root_path
 
       expect(page).to have_content("Sign Up")
@@ -36,6 +36,26 @@ RSpec.describe "basic User functions", type: :feature do
       fill_in "Email", with: "Test@test.test.com"
       fill_in "Password", with: "Test1df234"
       fill_in "Password Confirmation", with: "Test1234"
+
+      click_on "Complete Sign Up"
+
+      expect(page).to have_content("Passwords do not match.")
+    end
+
+    it "throws an error if password is less than 6 characters" do
+      visit root_path
+
+      expect(page).to have_content("Sign Up")
+      expect(page).to have_content("Log In")
+
+      click_on "Sign Up"
+
+      expect(page).to have_content("Create New User")
+
+      fill_in "Name", with: "Test"
+      fill_in "Email", with: "Test@test.test.com"
+      fill_in "Password", with: "Test"
+      fill_in "Password Confirmation", with: "Test"
 
       click_on "Complete Sign Up"
 

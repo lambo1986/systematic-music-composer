@@ -8,11 +8,14 @@ class UsersController < ApplicationController
   end
 
   def create
-    @user = User.build(user_params)
-    if @user.save
+    @user = User.new(user_params)
+    if user_params[:password] != user_params[:password_confirmation]
+      flash.now[:alert] = "Passwords do not match."
+      render :new
+    elsif @user.save
       redirect_to root_path, notice: "Welcome, #{@user.name}!"
     else
-      flash.now[alert] = "FAILED to Create User!"
+      flash.now[:alert] = "FAILED to Create User!"
       render :new
     end
   end
