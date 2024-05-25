@@ -12,7 +12,8 @@ class UsersController < ApplicationController
     if @user.save
       redirect_to root_path, notice: "Welcome, #{@user.name}!"
     else
-      flash[notice]
+      flash.now[alert] = "FAILED to Create User!"
+      render :new
     end
   end
 
